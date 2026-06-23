@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommunityPay — Built for Africa's Communities</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <div class="logo" onclick="showPage('home')">
+      <div class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="1.5"/>
+          <path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#fff"/>
+        </svg>
+      </div>
+      <span>Community<span class="logo-accent">Pay</span></span>
+    </div>
+    <div class="nav-links">
+      <a onclick="showPage('home')" class="nav-link">Home</a>
+      <a onclick="showPage('features')" class="nav-link">Features</a>
+      <a onclick="showPage('pricing')" class="nav-link">Pricing</a>
+      <a onclick="showPage('contact')" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-ctas">
+      <button class="btn-ghost-nav" onclick="showPage('login')">Sign in</button>
+      <button class="btn-pill" onclick="showPage('register')">Get started free →</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a onclick="showPage('home');toggleMobile()">Home</a>
+    <a onclick="showPage('features');toggleMobile()">Features</a>
+    <a onclick="showPage('pricing');toggleMobile()">Pricing</a>
+    <a onclick="showPage('contact');toggleMobile()">Contact</a>
+    <div class="mobile-menu-ctas">
+      <button class="btn-ghost-nav" onclick="showPage('login');toggleMobile()">Sign in</button>
+      <button class="btn-pill" onclick="showPage('register');toggleMobile()">Get started →</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════ PAGE: HOME ══════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Trusted by 500+ organizations across Africa
+      </div>
+      <h1 class="hero-h1">
+        Your community's<br>
+        <span class="hero-gradient">finances, unified.</span>
+      </h1>
+      <p class="hero-sub">The fintech platform built for churches, chamas, welfare groups, and community associations. Every shilling tracked, every member served.</p>
+      <div class="hero-actions">
+        <button class="btn-cta" onclick="showPage('register')">
+          Start for free
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn-demo" onclick="showPage('live')">
+          <span class="demo-pulse"></span>
+          Watch live demo
+        </button>
+      </div>
+      <!-- Floating stats cards -->
+      <div class="hero-stats">
+        <div class="stat-float" style="--delay:0s">
+          <div class="stat-icon">💰</div>
+          <div>
+            <div class="stat-val" data-count="2000000000" data-prefix="KSh " data-suffix="B+" data-billions="true">KSh 2B+</div>
+            <div class="stat-lbl">Processed</div>
+          </div>
+        </div>
+        <div class="stat-float" style="--delay:.1s">
+          <div class="stat-icon">🏢</div>
+          <div>
+            <div class="stat-val" data-count="500" data-suffix="+">500+</div>
+            <div class="stat-lbl">Organizations</div>
+          </div>
+        </div>
+        <div class="stat-float" style="--delay:.2s">
+          <div class="stat-icon">👥</div>
+          <div>
+            <div class="stat-val" data-count="50000" data-suffix="K+">50K+</div>
+            <div class="stat-lbl">Active Members</div>
+          </div>
+        </div>
+        <div class="stat-float" style="--delay:.3s">
+          <div class="stat-icon">⚡</div>
+          <div>
+            <div class="stat-val">99.9%</div>
+            <div class="stat-lbl">Uptime SLA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated live preview card -->
+    <div class="hero-card-preview">
+      <div class="preview-card">
+        <div class="preview-header">
+          <div class="preview-dot red"></div>
+          <div class="preview-dot amber"></div>
+          <div class="preview-dot green"></div>
+          <span class="preview-title">Annual Harambee 2025</span>
+          <span class="preview-live-badge"><span class="mini-pulse"></span>LIVE</span>
+        </div>
+        <div class="preview-amount" id="hero-amount">KSh 187,500</div>
+        <div class="preview-label">of KSh 300,000 target</div>
+        <div class="preview-bar-wrap">
+          <div class="preview-bar" id="hero-bar" style="width:62.5%"></div>
+        </div>
+        <div class="preview-pct" id="hero-pct">62.5% reached</div>
+        <div class="preview-contributors">
+          <div class="preview-contrib"><span>💎 Pastor Walter Malela</span><strong>+KSh 15,000</strong></div>
+          <div class="preview-contrib"><span>🌟 Eunice Anyango </span><strong>+KSh 10,000</strong></div>
+          <div class="preview-contrib"><span>✨ Brother Dennis Mwende</span><strong>+KSh 7,500</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <span class="trust-label">Used by</span>
+      <div class="trust-chips">
+        <div class="chip">⛪ Churches</div>
+        <div class="chip">🤝 Chama Groups</div>
+        <div class="chip">🏫 School Clubs</div>
+        <div class="chip">👥 PMAK Chapters</div>
+        <div class="chip">💼 Welfare Groups</div>
+        <div class="chip">🌱 Youth Orgs</div>
+        <div class="chip">🎯 Fundraisers</div>
+        <div class="chip">🏆 Mentorship Groups</div>
+        <!-- Duplicate for scroll loop -->
+        <div class="chip">⛪ Churches</div>
+        <div class="chip">🤝 Chama Groups</div>
+        <div class="chip">🏫 School Clubs</div>
+        <div class="chip">👥 PMAK Chapters</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES BENTO -->
+  <section class="section features-section">
+    <div class="section-head">
+      <div class="section-eyebrow">Platform Features</div>
+      <h2>Everything your community needs</h2>
+      <p>From contributions to welfare to fundraising — one platform for every shilling.</p>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-large" tabindex="0">
+        <div class="bento-glow indigo"></div>
+        <div class="bento-icon">💰</div>
+        <h3>Contribution Tracking</h3>
+        <p>Record and track every contribution with real-time balance updates, automated receipts, and full payment history.</p>
+        <div class="bento-visual">
+          <div class="mini-chart">
+            <div class="bar" style="height:40%"></div>
+            <div class="bar" style="height:55%"></div>
+            <div class="bar" style="height:70%"></div>
+            <div class="bar" style="height:60%"></div>
+            <div class="bar" style="height:85%"></div>
+            <div class="bar active" style="height:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bento-card" tabindex="0">
+        <div class="bento-glow emerald"></div>
+        <div class="bento-icon">🏥</div>
+        <h3>Welfare Management</h3>
+        <p>Full claims processing, fund disbursements, and beneficiary tracking with audit trails.</p>
+      </div>
+      <div class="bento-card" tabindex="0">
+        <div class="bento-glow amber"></div>
+        <div class="bento-icon">📺</div>
+        <h3>Live Display Mode</h3>
+        <p>Project real-time contributions on a big screen during events. Auto-refreshing and visually stunning.</p>
+        <button class="bento-cta" onclick="showPage('live')">Try it live →</button>
+      </div>
+      <div class="bento-card bento-wide" tabindex="0">
+        <div class="bento-glow purple"></div>
+        <div class="bento-icon">🤖</div>
+        <h3>AI Financial Insights</h3>
+        <p>Smart predictions, anomaly detection, and AI-generated summaries for better financial decisions. Powered by CommunityPay Intelligence.</p>
+        <div class="ai-chips">
+          <span class="ai-chip green">↑ 18% growth detected</span>
+          <span class="ai-chip amber">12 reminders pending</span>
+          <span class="ai-chip blue">On track 3 days early</span>
+        </div>
+      </div>
+      <div class="bento-card" tabindex="0">
+        <div class="bento-glow cyan"></div>
+        <div class="bento-icon">🎯</div>
+        <h3>Fundraising Events</h3>
+        <p>Create events, set targets, and track progress in real-time with beautiful displays.</p>
+      </div>
+      <div class="bento-card" tabindex="0">
+        <div class="bento-glow indigo"></div>
+        <div class="bento-icon">👥</div>
+        <h3>Member Management</h3>
+        <p>Complete profiles, group assignments, attendance tracking, and contribution history.</p>
+      </div>
+      <div class="bento-card" tabindex="0">
+        <div class="bento-glow emerald"></div>
+        <div class="bento-icon">📊</div>
+        <h3>Reports & Analytics</h3>
+        <p>PDF exports, CSV downloads, visual dashboards and trend analysis.</p>
+      </div>
+      <div class="bento-card" tabindex="0">
+        <div class="bento-glow amber"></div>
+        <div class="bento-icon">🔔</div>
+        <h3>Smart Notifications</h3>
+        <p>Automated WhatsApp/SMS/Email reminders for due contributions and updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testi-section">
+    <div class="section-head">
+      <div class="section-eyebrow">Community Love</div>
+      <h2>Loved by leaders across Africa</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card testi-featured">
+        <div class="testi-quote">"</div>
+        <p>CommunityPay transformed how we manage our church harambee. Real-time displays during fundraisers are absolutely amazing. Our collections have increased by 40%.</p>
+        <div class="testi-foot">
+          <div class="tav" style="background:linear-gradient(135deg,#4F46E5,#0891b2)">MW</div>
+          <div>
+            <div class="tname">Pastor Dominic Wagoro</div>
+            <div class="trole">Full gospel Churches of Kenya</div>
+          </div>
+          <div class="trating">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>Our chama used to struggle with manual records. Now every member can see their balance anytime. The welfare module is exactly what we needed.</p>
+        <div class="testi-foot">
+          <div class="tav" style="background:linear-gradient(135deg,#059669,#06b6d4)">JK</div>
+          <div>
+            <div class="tname">James Kamau</div>
+            <div class="trole">Westlands Chama Group</div>
+          </div>
+          <div class="trating">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>Raised 3x our target at our last event! The live display screen keeps donors motivated and the energy in the room incredible.</p>
+        <div class="testi-foot">
+          <div class="tav" style="background:linear-gradient(135deg,#7c3aed,#2563eb)">SA</div>
+          <div>
+            <div class="tname">Sarah Achieng</div>
+            <div class="trole">PMAK Kisumu Chapter</div>
+          </div>
+          <div class="trating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-noise"></div>
+    <div class="cta-inner">
+      <div class="cta-left">
+        <h2>Ready to modernize<br>your community?</h2>
+        <p>Join 500+ organizations already on CommunityPay. Free plan available, no credit card required.</p>
+      </div>
+      <div class="cta-right">
+        <button class="btn-cta" onclick="showPage('register')">
+          Start free today →
+        </button>
+        <button class="btn-demo" onclick="showPage('pricing')" style="color:#fff">
+          Compare plans
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:.5rem;">
+          <div class="logo-mark"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="1.5"/><path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#fff"/></svg></div>
+          <span>Community<span class="logo-accent">Pay</span></span>
+        </div>
+        <p>Built for Africa's communities. Every shilling counts.</p>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a onclick="showPage('features')">Features</a>
+          <a onclick="showPage('pricing')">Pricing</a>
+          <a onclick="showPage('live')">Live Demo</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a onclick="showPage('contact')">Contact</a>
+          <a>Privacy</a>
+          <a>Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CommunityPay. Made with ❤️ for Africa.</span>
+    </div>
+  </footer>
+</div><!-- /page-home -->
+
+
+<!-- ══════════════ PAGE: FEATURES ══════════════ -->
+<div id="page-features" class="page">
+  <section class="inner-hero">
+    <div class="hero-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="inner-hero-content">
+      <div class="section-eyebrow">Features</div>
+      <h1>Powerful tools for <span class="hero-gradient">every organization</span></h1>
+      <p>Everything you need to manage contributions, welfare, and community finances.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="bento-grid">
+      <div class="bento-card bento-large" tabindex="0"><div class="bento-glow indigo"></div><div class="bento-icon">💰</div><h3>Contribution Tracking</h3><p>Record contributions by category, track payment methods, generate receipts, and monitor balances in real-time with full history.</p></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow emerald"></div><div class="bento-icon">🏥</div><h3>Welfare Management</h3><p>Manage claims, disbursements, beneficiaries, and welfare fund balances with full audit trail and approval workflows.</p></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow amber"></div><div class="bento-icon">🎯</div><h3>Fundraising Events</h3><p>Create events with targets, track contributions, display live progress, manage expenses, and generate event reports.</p></div>
+      <div class="bento-card bento-wide" tabindex="0"><div class="bento-glow purple"></div><div class="bento-icon">👥</div><h3>Member Profiles</h3><p>Complete member records with photos, contribution history, welfare records, group assignments, and attendance tracking.</p></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow cyan"></div><div class="bento-icon">📊</div><h3>Financial Reports</h3><p>PDF and CSV exports, monthly summaries, event performance, member statements, and trend analysis at your fingertips.</p></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow indigo"></div><div class="bento-icon">📺</div><h3>Live Display Screen</h3><p>Projector-ready screen showing real-time contributions during events. Auto-refreshes every few seconds.</p><button class="bento-cta" onclick="showPage('live')">Try it →</button></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow emerald"></div><div class="bento-icon">🔒</div><h3>Role-Based Access</h3><p>Admin, Treasurer, Secretary, and Member roles with granular permissions and JWT-secured authentication.</p></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow amber"></div><div class="bento-icon">🔔</div><h3>Smart Notifications</h3><p>Automated WhatsApp/SMS/Email reminders for contribution due dates, event updates, and welfare approvals.</p></div>
+      <div class="bento-card" tabindex="0"><div class="bento-glow purple"></div><div class="bento-icon">🤖</div><h3>AI Insights</h3><p>Predictive analytics, contribution trend forecasting, anomaly detection, and AI-generated financial summaries.</p></div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════ PAGE: PRICING ══════════════ -->
+<div id="page-pricing" class="page">
+  <section class="inner-hero">
+    <div class="hero-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="inner-hero-content">
+      <div class="section-eyebrow">Pricing</div>
+      <h1>Simple, <span class="hero-gradient">transparent pricing</span></h1>
+      <p>Choose the plan that fits. All plans include a 30-day free trial.</p>
+    </div>
+  </section>
+  <section class="section pricing-section">
+    <div class="billing-toggle">
+      <span class="toggle-lbl" id="tl-monthly">Monthly</span>
+      <div class="toggle-track" id="billing-toggle" onclick="toggleBilling()">
+        <div class="toggle-thumb" id="toggle-thumb"></div>
+      </div>
+      <span class="toggle-lbl" id="tl-yearly">Yearly</span>
+      <div class="save-badge">Save 20%</div>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="plan-eyebrow">Free forever</div>
+        <div class="plan-name">Starter</div>
+        <div class="plan-price-wrap">
+          <span class="plan-currency">KSh</span>
+          <span class="plan-price" id="price-starter">0</span>
+          <span class="plan-period">/mo</span>
+        </div>
+        <p class="plan-desc">Perfect for small groups and getting started.</p>
+        <button class="plan-btn plan-btn-ghost" onclick="showPage('register')">Get started free</button>
+        <ul class="plan-features">
+          <li class="yes">Up to 30 members</li>
+          <li class="yes">Basic contribution tracking</li>
+          <li class="yes">1 active fundraising event</li>
+          <li class="yes">PDF reports</li>
+          <li class="yes">Email notifications</li>
+          <li class="no">Welfare management</li>
+          <li class="no">Live display mode</li>
+          <li class="no">AI insights</li>
+        </ul>
+      </div>
+      <div class="pricing-card pricing-featured">
+        <div class="popular-badge">Most Popular</div>
+        <div class="plan-eyebrow">For growing orgs</div>
+        <div class="plan-name">Community</div>
+        <div class="plan-price-wrap">
+          <span class="plan-currency">KSh</span>
+          <span class="plan-price" id="price-community">2,500</span>
+          <span class="plan-period">/mo</span>
+        </div>
+        <p class="plan-desc">Full power for organizations that mean business.</p>
+        <button class="plan-btn plan-btn-primary" onclick="showPage('register')">Start free trial</button>
+        <ul class="plan-features">
+          <li class="yes">Up to 500 members</li>
+          <li class="yes">Full contribution management</li>
+          <li class="yes">Unlimited fundraising events</li>
+          <li class="yes">Welfare management module</li>
+          <li class="yes">Live display mode</li>
+          <li class="yes">PDF + CSV reports</li>
+          <li class="yes">Smart notifications</li>
+          <li class="no">AI insights</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="plan-eyebrow">For large organizations</div>
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price-wrap">
+          <span class="plan-price" style="font-size:2rem">Custom</span>
+        </div>
+        <p class="plan-desc">Advanced needs, custom integrations, dedicated support.</p>
+        <button class="plan-btn plan-btn-ghost" onclick="showPage('contact')">Contact sales</button>
+        <ul class="plan-features">
+          <li class="yes">Unlimited members</li>
+          <li class="yes">All Community features</li>
+          <li class="yes">AI insights & predictions</li>
+          <li class="yes">Custom branding & domain</li>
+          <li class="yes">M-Pesa / Bank integration</li>
+          <li class="yes">Dedicated account manager</li>
+          <li class="yes">Priority support 24/7</li>
+          <li class="yes">Custom integrations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════ PAGE: CONTACT ══════════════ -->
+<div id="page-contact" class="page">
+  <section class="inner-hero">
+    <div class="hero-orbs"><div class="orb orb-1"></div></div>
+    <div class="inner-hero-content">
+      <div class="section-eyebrow">Contact</div>
+      <h1>Let's <span class="hero-gradient">talk</span></h1>
+      <p>Our team is ready to help you get started or answer any questions.</p>
+    </div>
+  </section>
+  <section class="section contact-section">
+    <div class="contact-grid">
+      <div class="contact-form-card">
+        <h3>Send a message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input class="finput" placeholder="Your name"></div>
+          <div class="form-group"><label>Email</label><input class="finput" placeholder="you@example.com"></div>
+        </div>
+        <div class="form-group"><label>Subject</label><input class="finput" placeholder="How can we help?"></div>
+        <div class="form-group"><label>Message</label><textarea class="finput ftextarea" rows="4" placeholder="Tell us what you need..."></textarea></div>
+        <button class="btn-cta" style="width:100%;justify-content:center;">Send message →</button>
+      </div>
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <div>
+            <div class="info-title">Email us</div>
+            <div class="info-val">hello@communitypay.co.ke</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="info-title">Call us</div>
+            <div class="info-val">+254 700 000 000</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">⏰</div>
+          <div>
+            <div class="info-title">Support hours</div>
+            <div class="info-val">Mon–Fri, 8am–6pm EAT</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">💬</div>
+          <div>
+            <div class="info-title">WhatsApp</div>
+            <div class="info-val">Quick replies available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════ PAGE: LOGIN ══════════════ -->
+<div id="page-login" class="page">
+  <div class="auth-layout">
+    <div class="auth-side">
+      <div class="auth-side-inner">
+        <div class="auth-side-logo">
+          <div class="logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="1.5"/><path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#fff"/></svg></div>
+          <span>Community<span class="logo-accent">Pay</span></span>
+        </div>
+        <h2>Your community's<br>financial hub.</h2>
+        <p>Join 500+ organizations managing contributions, welfare, and events in one place.</p>
+        <div class="auth-side-stats">
+          <div class="aside-stat"><div class="aside-stat-val">KSh 2B+</div><div class="aside-stat-lbl">Processed</div></div>
+          <div class="aside-stat"><div class="aside-stat-val">50K+</div><div class="aside-stat-lbl">Members</div></div>
+          <div class="aside-stat"><div class="aside-stat-val">99.9%</div><div class="aside-stat-lbl">Uptime</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div class="auth-card-head">
+          <h2>Welcome back</h2>
+          <p>Sign in to your organization</p>
+        </div>
+        <div class="form-group"><label>Email Address</label><input class="finput" type="email" placeholder="you@example.com"></div>
+        <div class="form-group"><label>Password</label><div class="pass-wrap"><input class="finput" type="password" placeholder="Your password" id="login-pass"><button class="pass-toggle" onclick="togglePass('login-pass',this)">👁</button></div></div>
+        <button class="btn-cta" style="width:100%;justify-content:center;margin-top:.5rem" onclick="showPage('dashboard')">Sign in →</button>
+        <div class="auth-divider">or</div>
+        <button class="btn-sso">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+        <div class="auth-footer-links">
+          <span>Don't have an account? <a onclick="showPage('register')">Create one free</a></span>
+          <a class="forgot">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ PAGE: REGISTER ══════════════ -->
+<div id="page-register" class="page">
+  <div class="auth-layout">
+    <div class="auth-side">
+      <div class="auth-side-inner">
+        <div class="auth-side-logo">
+          <div class="logo-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="1.5"/><path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#fff"/></svg></div>
+          <span>Community<span class="logo-accent">Pay</span></span>
+        </div>
+        <h2>Set up in<br>under 5 minutes.</h2>
+        <p>No technical skills needed. Start tracking contributions and managing members today.</p>
+        <div class="setup-steps">
+          <div class="setup-step"><div class="step-num">1</div><div>Create your account</div></div>
+          <div class="setup-step"><div class="step-num">2</div><div>Add your organization</div></div>
+          <div class="setup-step"><div class="step-num">3</div><div>Invite members</div></div>
+          <div class="setup-step"><div class="step-num">4</div><div>Start collecting</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div class="auth-card-head">
+          <h2>Create your account</h2>
+          <p>Free forever. No credit card required.</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input class="finput" placeholder="First name"></div>
+          <div class="form-group"><label>Last Name</label><input class="finput" placeholder="Last name"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input class="finput" type="email" placeholder="you@example.com"></div>
+        <div class="form-group"><label>Organization Name</label><input class="finput" placeholder="e.g. Westlands Chama Group"></div>
+        <div class="form-group">
+          <label>Organization Type</label>
+          <select class="finput fselect">
+            <option>Church</option>
+            <option>Chama Group</option>
+            <option>Welfare Group</option>
+            <option>School Club</option>
+            <option>PMAK Chapter</option>
+            <option>Youth Organization</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Password</label><div class="pass-wrap"><input class="finput" type="password" placeholder="Create a strong password" id="reg-pass"><button class="pass-toggle" onclick="togglePass('reg-pass',this)">👁</button></div></div>
+        <button class="btn-cta" style="width:100%;justify-content:center;margin-top:.5rem" onclick="showPage('dashboard')">Create organization →</button>
+        <div class="auth-footer-links" style="justify-content:center">
+          <span>Already have an account? <a onclick="showPage('login')">Sign in</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ PAGE: DASHBOARD ══════════════ -->
+<div id="page-dashboard" class="page">
+  <div class="dash-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark sm"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="1.5"/><path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#fff"/></svg></div>
+        <span>Community<span class="logo-accent">Pay</span></span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group-label">Main</div>
+        <div class="sitem active" onclick="showDash('overview')"><span>📊</span><span>Overview</span></div>
+        <div class="sitem" onclick="showDash('members')"><span>👥</span><span>Members</span><span class="sbadge">148</span></div>
+        <div class="sitem" onclick="showDash('contributions')"><span>💰</span><span>Contributions</span></div>
+        <div class="sitem" onclick="showPage('events')"><span>🎯</span><span>Events</span></div>
+        <div class="sitem" onclick="showPage('live')"><span>📺</span><span>Live Display</span><span class="sbadge live-badge">LIVE</span></div>
+        <div class="sidebar-group-label">Insights</div>
+        <div class="sitem" onclick="showDash('reports')"><span>📄</span><span>Reports</span></div>
+        <div class="sitem" onclick="showDash('analytics')"><span>📈</span><span>Analytics</span></div>
+        <div class="sidebar-group-label">Admin</div>
+        <div class="sitem" onclick="showDash('settings')"><span>⚙️</span><span>Settings</span></div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sitem logout" onclick="showPage('home')"><span>🚪</span><span>Logout</span></div>
+      </div>
+    </aside>
+    <div class="dash-main">
+      <header class="dash-header">
+        <div class="dash-header-left">
+          <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+          <div class="dash-title" id="dash-title">Dashboard Overview</div>
+        </div>
+        <div class="dash-header-right">
+          <div class="notif-wrap">
+            <button class="notif-btn" onclick="toggleNotif()">
+              🔔
+              <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-panel" id="notif-panel">
+              <div class="notif-panel-head">Notifications</div>
+              <div class="notif-item unread"><div class="notif-icon">💰</div><div><div class="notif-msg">Peter Mwangi contributed KSh 2,000</div><div class="notif-time">2 mins ago</div></div></div>
+              <div class="notif-item unread"><div class="notif-icon">⚠️</div><div><div class="notif-msg">12 members have pending contributions</div><div class="notif-time">1 hr ago</div></div></div>
+              <div class="notif-item"><div class="notif-icon">✅</div><div><div class="notif-msg">Welfare disbursement approved</div><div class="notif-time">3 hrs ago</div></div></div>
+            </div>
+          </div>
+          <button class="btn-pill sm" onclick="showDash('contributions')">+ Quick Add</button>
+          <div class="user-chip" onclick="showDash('settings')">
+            <div class="user-av">JK</div>
+            <span>James K.</span>
+            <span>▾</span>
+          </div>
+        </div>
+      </header>
+      <div class="dash-body" id="dash-body"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ PAGE: EVENTS ══════════════ -->
+<div id="page-events" class="page">
+  <div class="dash-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark sm"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="1.5"/><path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#fff"/></svg></div>
+        <span>Community<span class="logo-accent">Pay</span></span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sitem" onclick="showPage('dashboard')"><span>📊</span><span>Overview</span></div>
+        <div class="sitem active"><span>🎯</span><span>Events</span></div>
+        <div class="sitem" onclick="showPage('live')"><span>📺</span><span>Live Display</span></div>
+      </nav>
+      <div class="sidebar-footer"><div class="sitem logout" onclick="showPage('home')"><span>🚪</span><span>Logout</span></div></div>
+    </aside>
+    <div class="dash-main">
+      <header class="dash-header">
+        <div class="dash-header-left"><div class="dash-title">Fundraising Events</div></div>
+        <div class="dash-header-right">
+          <button class="btn-pill sm">+ Create Event</button>
+          <div class="user-chip"><div class="user-av">JK</div><span>James K.</span></div>
+        </div>
+      </header>
+      <div class="dash-body">
+        <div class="events-grid">
+          <div class="event-card">
+            <div class="event-header" style="background:linear-gradient(135deg,#1e40af,#0891b2)">
+              <span class="event-status active-status">● Active</span>
+              <h3>Annual Harambee 2025</h3>
+              <div class="event-meta-row">📅 June 15, 2025 &nbsp;·&nbsp; 👥 148 members</div>
+            </div>
+            <div class="event-body-inner">
+              <div class="event-stats-row">
+                <div><div class="event-raised">KSh 187,500</div><div class="event-label">raised</div></div>
+                <div style="text-align:right"><div class="event-pct">62.5%</div><div class="event-label">of KSh 300,000</div></div>
+              </div>
+              <div class="prog-bar"><div class="prog-fill" style="width:62.5%;background:linear-gradient(90deg,#4F46E5,#06b6d4)"></div></div>
+              <div class="event-actions">
+                <button class="btn-ghost-sm" onclick="showPage('live')">📺 Live View</button>
+                <button class="btn-pill sm">Manage</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-header" style="background:linear-gradient(135deg,#7c3aed,#1e40af)">
+              <span class="event-status planning-status">◐ Planning</span>
+              <h3>Welfare Fund Drive Q3</h3>
+              <div class="event-meta-row">📅 August 3, 2025 &nbsp;·&nbsp; 👥 148 members</div>
+            </div>
+            <div class="event-body-inner">
+              <div class="event-stats-row">
+                <div><div class="event-raised">KSh 0</div><div class="event-label">raised</div></div>
+                <div style="text-align:right"><div class="event-pct" style="color:#f59e0b">0%</div><div class="event-label">of KSh 150,000</div></div>
+              </div>
+              <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
+              <div class="event-actions">
+                <span style="font-size:.78rem;color:#f59e0b">Not started yet</span>
+                <button class="btn-pill sm">Configure</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-header" style="background:linear-gradient(135deg,#065f46,#0891b2)">
+              <span class="event-status done-status">✓ Completed</span>
+              <h3>Christmas Charity Drive</h3>
+              <div class="event-meta-row">📅 Dec 20, 2024 &nbsp;·&nbsp; 👥 132 members</div>
+            </div>
+            <div class="event-body-inner">
+              <div class="event-stats-row">
+                <div><div class="event-raised">KSh 245,000</div><div class="event-label">raised</div></div>
+                <div style="text-align:right"><div class="event-pct" style="color:#10b981">122.5%</div><div class="event-label">exceeded target!</div></div>
+              </div>
+              <div class="prog-bar"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#10b981,#22d3ee)"></div></div>
+              <div class="event-actions">
+                <span style="font-size:.78rem;color:#10b981">🏆 Target exceeded!</span>
+                <button class="btn-ghost-sm">View Report</button>
+              </div>
+            </div>
+          </div>
+          <div class="event-new-card" onclick="alert('Create Event modal would open here')">
+            <div class="event-new-icon">+</div>
+            <div class="event-new-label">Create New Event</div>
+            <div class="event-new-sub">Set targets, invite contributors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ PAGE: LIVE DISPLAY ══════════════ -->
+<div id="page-live" class="page">
+  <div class="live-page">
+    <div class="live-bg-rings">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+    </div>
+    <div class="live-content">
+      <div class="live-top-bar">
+        <button class="btn-ghost-sm" onclick="showPage('events')" style="color:rgba(255,255,255,0.5)">← Back</button>
+        <div class="live-badge-pill"><span class="live-pulse-dot"></span> LIVE</div>
+      </div>
+      <div class="live-org">Westlands Community Church</div>
+      <div class="live-event-name">Annual Harambee 2025</div>
+      <div class="live-amount-display" id="live-amount">KSh 187,500</div>
+      <div class="live-target-label">of KSh 300,000 target</div>
+      <div class="live-progress-wrap">
+        <div class="live-progress-bar">
+          <div class="live-progress-fill" id="live-bar" style="width:62.5%"></div>
+        </div>
+        <div class="live-pct-row">
+          <span id="live-pct">62.5% reached</span>
+          <span id="live-remaining">KSh 112,500 to go</span>
+        </div>
+      </div>
+      <div class="live-contributors-title">🏆 Recent Contributors</div>
+      <div class="live-feed" id="live-feed">
+        <div class="live-contrib"><div class="lc-rank">💎</div><div class="lc-name">Deacon Peter Mwangi</div><div class="lc-amt">KSh 15,000</div></div>
+        <div class="live-contrib"><div class="lc-rank">🌟</div><div class="lc-name">Sister Grace Otieno</div><div class="lc-amt">KSh 10,000</div></div>
+        <div class="live-contrib"><div class="lc-rank">✨</div><div class="lc-name">Brother David Mutua</div><div class="lc-amt">KSh 7,500</div></div>
+        <div class="live-contrib"><div class="lc-rank">⭐</div><div class="lc-name">Anonymous</div><div class="lc-amt">KSh 5,000</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
